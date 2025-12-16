@@ -1,27 +1,193 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>المنصة الطلابية</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لوحة تحكم أنيقة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --secondary: #22c55e;
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --radius: 14px;
+      --shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary), #7c3aed);
+      color: #fff;
+      padding: 24px;
+    }
+    header .wrap {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand { font-weight: 700; font-size: 22px; }
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      margin-inline-start: 16px;
+      font-weight: 500;
+    }
+    nav a:hover { color: #fff; }
+
+    main {
+      max-width: 1200px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+    .stat h3 { margin: 0; font-size: 14px; color: var(--muted); }
+    .stat p { margin: 8px 0 0; font-size: 28px; font-weight: 700; }
+
+    .content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 900px) {
+      .content { grid-template-columns: 1fr; }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: right;
+    }
+    th { color: var(--muted); font-weight: 600; }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .success { background: #dcfce7; color: #166534; }
+    .pending { background: #fef3c7; color: #92400e; }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn.secondary { background: var(--secondary); }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 24px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>المنصة الطلابية</h1>
-        <nav>
-            <a href="index.html">الرئيسية</a>
-            <a href="about.html">عن المشروع</a>
-        </nav>
-    </header>
+  <header>
+    <div class="wrap">
+      <div class="brand">مشروعي</div>
+      <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="#">الطلبات</a>
+        <a href="#">العملاء</a>
+        <a href="#">تسجيل الخروج</a>
+        <a href="about.html"> عن المشروع</a>
 
-    <main>
-        <h2>اهلا بكم</h2>
-        <p>هذه هي الصفحة الرئيسية للمنصة الطلابية المجانية للعمل الجماعي باستخدام GitHub.</p>
-        <p>استخدم الروابط أعلاه للتنقل بين الصفحات.</p>
-    </main>
+      </nav>
+    </div>
+  </header>
 
-    <footer>
-        <p>© 2025 جميع الحقوق محفوظة</p>
-    </footer>
+  <main>
+    <section class="stats">
+      <div class="card stat">
+        <h3>إجمالي الطلبات</h3>
+        <p>128</p>
+      </div>
+      <div class="card stat">
+        <h3>طلبات قيد المعالجة</h3>
+        <p>23</p>
+      </div>
+      <div class="card stat">
+        <h3>عملاء جدد</h3>
+        <p>12</p>
+      </div>
+      <div class="card stat">
+        <h3>إيرادات اليوم</h3>
+        <p>$1,240</p>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="card">
+        <h2>أحدث الطلبات</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>العميل</th>
+              <th>الحالة</th>
+              <th>التاريخ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1024</td>
+              <td>أحمد</td>
+              <td><span class="badge success">مكتمل</span></td>
+              <td>2025-12-16</td>
+            </tr>
+            <tr>
+              <td>1025</td>
+              <td>سارة</td>
+              <td><span class="badge pending">قيد التنفيذ</span></td>
+              <td>2025-12-16</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>إجراءات سريعة</h2>
+        <p style="color: var(--muted)">أنشئ طلبًا جديدًا أو أدر العملاء بسهولة.</p>
+        <a class="btn" href="#">إضافة طلب</a>
+        <a class="btn secondary" style="margin-inline-start:8px" href="#">إضافة عميل</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 — جميع الحقوق محفوظة
+  </footer>
 </body>
 </html>
