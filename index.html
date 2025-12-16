@@ -1,27 +1,93 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>المنصة الطلابية</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لوحة تحكم أنيقة</title>
+
+  <!-- ربط ملف CSS الخارجي -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- الخط -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header>
-        <h1>المنصة الطلابية</h1>
-        <nav>
-            <a href="index.html">الرئيسية</a>
-            <a href="about.html">عن المشروع</a>
-        </nav>
-    </header>
 
-    <main>
-        <h2>اهلا بكم</h2>
-        <p>هذه هي الصفحة الرئيسية للمنصة الطلابية المجانية للعمل الجماعي باستخدام GitHub.</p>
-        <p>استخدم الروابط أعلاه للتنقل بين الصفحات.</p>
-    </main>
+<header>
+  <div class="wrap">
+    <div class="brand">مشروعي</div>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="#">الطلبات</a>
+      <a href="#">العملاء</a>
+      <a href="#">تسجيل الخروج</a>
+      <a href="about.html">عن المشروع</a>
+    </nav>
+  </div>
+</header>
 
-    <footer>
-        <p>© 2025 جميع الحقوق محفوظة</p>
-    </footer>
+<main>
+  <section class="stats">
+    <div class="card stat">
+      <h3>إجمالي الطلبات</h3>
+      <p>128</p>
+    </div>
+    <div class="card stat">
+      <h3>طلبات قيد المعالجة</h3>
+      <p>23</p>
+    </div>
+    <div class="card stat">
+      <h3>عملاء جدد</h3>
+      <p>12</p>
+    </div>
+    <div class="card stat">
+      <h3>إيرادات اليوم</h3>
+      <p>$1,240</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="card">
+      <h2>أحدث الطلبات</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>العميل</th>
+            <th>الحالة</th>
+            <th>التاريخ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1024</td>
+            <td>أحمد</td>
+            <td><span class="badge success">مكتمل</span></td>
+            <td>2025-12-16</td>
+          </tr>
+          <tr>
+            <td>1025</td>
+            <td>سارة</td>
+            <td><span class="badge pending">قيد التنفيذ</span></td>
+            <td>2025-12-16</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>إجراءات سريعة</h2>
+      <p class="muted">أنشئ طلبًا جديدًا أو أدر العملاء بسهولة.</p>
+      <a class="btn" href="#">إضافة طلب</a>
+      <a class="btn secondary" href="#">إضافة عميل</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2025 — جميع الحقوق محفوظة
+</footer>
+
 </body>
 </html>
